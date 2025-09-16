@@ -40,7 +40,7 @@ print(txt)
 
 WebDriverWait(driver, 2).until(EC.alert_is_present())
 driver.switch_to.alert.send_keys('test')
-WebDriverWait(driver, 2).until(EC.alert_is_present())
+time.sleep(2)
 driver.switch_to.alert.dismiss()
 print("Sent Keys")
 

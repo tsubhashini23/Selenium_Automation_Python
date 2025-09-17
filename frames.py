@@ -12,6 +12,7 @@ driver.maximize_window()
 print("Page title: ", driver.title)
 driver.implicitly_wait(5)
 
+
 # WebDriverWait(driver, 2).until(EC.alert_is_present())
 
 # driver.switch_to.frame('singleframe')

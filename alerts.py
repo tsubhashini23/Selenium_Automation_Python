@@ -1,5 +1,4 @@
 import time
-
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -10,7 +9,7 @@ driver.get("https://demo.automationtesting.in/Alerts.html")
 
 driver.maximize_window()
 print("Page title: ", driver.title)
-driver.implicitly_wait(2)
+# driver.implicitly_wait(2)
 
 # driver.find_element(By.XPATH, "//a[@href='SwitchTo.html']")
 
@@ -19,7 +18,7 @@ driver.find_element(By.ID, "OKTab").click()
 # driver.find_element(By.XPATH, "//button[@class='btn btn-danger']").click()
 
 # Explicit wait for alert
-WebDriverWait(driver, 2).until(EC.alert_is_present())
+WebDriverWait(driver, 5).until(EC.alert_is_present())
 driver.switch_to.alert.accept()
 print("Accepted")
 

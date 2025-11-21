@@ -1,3 +1,4 @@
+
 import time
 
 from selenium import webdriver
@@ -24,18 +25,19 @@ driver.find_element(By.XPATH,"//input[@placeholder='First Name']").send_keys("Su
 # //input[@id='email' or @name='userEmail']
 # //label[text()='Full Name*']
 # //label[contains(text(),'word')]
-# //form[@id='basicBootstrapForm']/child::div[1]/div[1]---->Gives the childs of form tag
-# //form[@id='basicBootstrapForm']/child::div ( Similar to //form[@id='basicBootstrapForm']/div )
+# //form[@id='basicBootstrapForm']/child::div----->Gives the direct children(immediate level) ( Similar to //form[@id='basicBootstrapForm']/div )
 # //form[@id='basicBootstrapForm']/parent::div---->Gives the direct parent of form tag
-# //form[@id='basicBootstrapForm']/ancestor::div-->Gives all the parent tags(eg, div tags) up in the hierarchy until the root
+# //form[@id='basicBootstrapForm']/ancestor::div-->Gives all the parent div tags(eg, div tags) up in the hierarchy until the root
 # //form[@id='basicBootstrapForm']/ancestor::*-->Gives all the parent tags(eg, html, head, div) up in the hierarchy until the root
 # //form[@id='basicBootstrapForm']/descendant::div ( similar to //form[@id='basicBootstrapForm']//div )
 # //input[@id='checkbox1']/following-sibling::label
 # //label[text()='Movies ']/preceding-sibling::input
+# (This works only if the <input> and <label> share the same parent, and the input appears before the label.
+# If the label comes before the input, or they are not siblings, it will not match anything)
 # //label[normalize-space(text())='Movies']/preceding-sibling::input-->Removes extra spaces
 # input[contains(@placeholder, 'name')]
 # input[starts-with(@placeholder, 'name')]
-# input[ends-with(@placeholder, 'name')]
+# input[ends-with(text(), 'name')]
 # //*[@id='email')
 
 # Logical combinations

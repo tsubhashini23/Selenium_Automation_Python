@@ -52,6 +52,8 @@ def launch_browser_two(request):
 @pytest.mark.usefixtures("launch_browser_two")
 class TestScopeOfFixtures:
 
+    driver: webdriver.Chrome  # optional: removes PyCharm warnings "Unresolved attribute reference 'driver' for class 'TestScopeOfFixtures'" in the below statements
+
     def test_launch_myntra(self):
         self.driver.get("https://www.myntra.com/")
         time.sleep(5)

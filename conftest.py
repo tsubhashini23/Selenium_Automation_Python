@@ -53,7 +53,6 @@ from pathlib import Path
 
 
 
-
 # @pytest.fixture(scope='class')
 # def browser(request):
 #     options = Options()
@@ -71,12 +70,13 @@ from pathlib import Path
 @pytest.fixture(scope='class', autouse=True)
 def browser(request):
     options = Options()
-    # options.add_experimental_option("detach",True)
     options.add_argument("--start-maximized")
+
     driver = webdriver.Chrome(
         service=Service(ChromeDriverManager().install()),
         options=options
     )
+
     request.cls.driver = driver
     yield driver
     driver.quit()
